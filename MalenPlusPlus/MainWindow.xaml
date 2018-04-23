@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MalenPlusPlus"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="350" Width="525" WindowState="Maximized">
+
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+            <Button DockPanel.Dock="Left">save</Button>
+            <Button DockPanel.Dock="Left">load</Button>
+            <Button DockPanel.Dock="Left">close</Button>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <ComboBox Grid.Column="0" Grid.Row="0" Name="ComboBox" DockPanel.Dock="Top" SelectionChanged="ComboBox_OnSelectionChanged"></ComboBox>
+
+                <TextBlock Grid.Column="1" Grid.Row="0" FontSize="18">Rot</TextBlock>
+                <Slider Name="Rot" Grid.Column="2" Grid.Row="0" Maximum="255" ValueChanged="OnValueChanged"></Slider>
+
+                <TextBlock Grid.Column="3" Grid.Row="0" FontSize="18">Grün</TextBlock>
+                <Slider Name="Grün"  Grid.Column="4" Grid.Row="0" Maximum="255" ValueChanged="OnValueChanged"></Slider>
+
+                <TextBlock Grid.Column="5" Grid.Row="0" FontSize="18">Blau</TextBlock>
+                <Slider Name="Blau"  Grid.Column="6" Grid.Row="0" Maximum="255" ValueChanged="OnValueChanged"></Slider>
+                <TextBlock Grid.Column="7" Grid.Row="0" FontSize="18">Alpha</TextBlock>
+                <Slider Name="Alpha" Grid.Column="8" Grid.Row="0" Maximum="255" Value="255" ValueChanged="OnValueChanged"></Slider>
+
+                <Rectangle Name="FarbeVorschau" Grid.Column="9" Grid.Row="0" Fill="Black"></Rectangle>
+            </Grid>
+        </DockPanel>
+        <Grid>
+            
+        </Grid>
+    </DockPanel>
 </Window>

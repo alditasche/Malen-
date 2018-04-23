@@ -23,6 +23,24 @@ namespace MalenPlusPlus
         public MainWindow()
         {
             InitializeComponent();
+            this.ComboBox.Items.Add("1");
+            this.ComboBox.Items.Add("5");
+            this.ComboBox.Items.Add("10");
+            this.ComboBox.Items.Add("15");
+            this.ComboBox.Items.Add("20");
+            this.ComboBox.Items.Add("25");
+            this.ComboBox.Items.Add("30");
+            this.ComboBox.Items.Add("50");
+            this.ComboBox.SelectedIndex = 2;
+        }
+
+        private void OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+        }
+
+        private void ComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
