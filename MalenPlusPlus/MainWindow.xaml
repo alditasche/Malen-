@@ -8,11 +8,23 @@
         Title="MainWindow" Height="350" Width="525" WindowState="Maximized">
 
     <DockPanel>
-        <DockPanel DockPanel.Dock="Top" LastChildFill="True">
-            <Button DockPanel.Dock="Left">save</Button>
-            <Button DockPanel.Dock="Left">load</Button>
-            <Button DockPanel.Dock="Left">close</Button>
-            <Grid>
+        <Button DockPanel.Dock="Top" Click="ButtonBase_OnClick">test me</Button>
+        <Grid DockPanel.Dock="Top" >
+            
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <DockPanel LastChildFill="False">
+                <Button Name="SaveButton" Click="SaveButton_OnClick" DockPanel.Dock="Left">save</Button>
+                <Button DockPanel.Dock="Left" Name="LoadButton" Click="LoadButton_OnClick">load</Button>
+                <Button DockPanel.Dock="Left" Name="UndoButton" Click="UndoButton_Onclick">undo</Button>
+                <Button DockPanel.Dock="Left" Name="ClearrButton" Click="ClearrButton_OnClick">clear</Button>
+                <Button DockPanel.Dock="Left" x:Name="ClearAllButton" Click="ClearAllButton_OnClick" Content="clear All"/>
+            </DockPanel>
+
+            <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="50"></ColumnDefinition>
@@ -41,9 +53,10 @@
 
                 <Rectangle Name="FarbeVorschau" Grid.Column="9" Grid.Row="0" Fill="Black"></Rectangle>
             </Grid>
-        </DockPanel>
+        </Grid>
         <Grid>
-            
+            <Canvas Name="Canvas" MouseUp="Canvas_OnMouseUp " MouseMove="Canvas_OnMouseMove " ClipToBounds="True"  Background="White" MouseDown="Canvas_OnMouseDown"></Canvas>
+
         </Grid>
     </DockPanel>
 </Window>

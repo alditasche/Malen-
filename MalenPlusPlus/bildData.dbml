@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="saveyoupic" Class="bildDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\saveyoupic.mdf;Integrated Security=True" SettingsObjectName="MalenPlusPlus.Properties.Settings" SettingsPropertyName="saveyoupicConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Files" Member="Files">
+    <Type Name="Files">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>
